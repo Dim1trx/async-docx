@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: document-worker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/async_docx
+    username: async_docx
+    password: async_docx
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: document-worker
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.yago.asyncdocx.worker.messaging
+
+app:
+  kafka:
+    document-generation-topic: document-generation-requests
+  documents:
+    storage-path: ../generated-documents
+    template-path: classpath:templates/service-agreement-template.docx
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

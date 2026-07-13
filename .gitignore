@@ -1,0 +1,13 @@
+target/
+build/
+out/
+
+.idea/
+.vscode/
+*.iml
+
+generated-documents/
+*.log
+
+.DS_Store
+Thumbs.db
