@@ -7,9 +7,9 @@ services:
       POSTGRES_USER: async_docx
       POSTGRES_PASSWORD: async_docx
     ports:
-      - "5432:5432"
+      - "15432:5432"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-18-data:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U async_docx -d async_docx"]
       interval: 10s
@@ -36,4 +36,4 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
 volumes:
-  postgres-data:
+  postgres-18-data:

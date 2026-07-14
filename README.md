@@ -86,6 +86,18 @@ mvnw.cmd spring-boot:run
 
 ## API Examples
 
+Swagger UI is available after starting `document-api`:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+The raw OpenAPI document is available at:
+
+```text
+http://localhost:8080/v3/api-docs
+```
+
 Create document data:
 
 ```bash

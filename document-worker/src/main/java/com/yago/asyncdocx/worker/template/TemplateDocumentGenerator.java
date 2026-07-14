@@ -28,9 +28,9 @@ public class TemplateDocumentGenerator implements DocumentGenerator {
 	private final NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
 
 	public TemplateDocumentGenerator(
-			@Value("${app.documents.storage-path}") Path storagePath,
+			@Value("${app.documents.storage-path}") String storagePath,
 			@Value("${app.documents.template-path}") Resource templateResource) {
-		this.storagePath = storagePath;
+		this.storagePath = Path.of(storagePath).normalize();
 		this.templateResource = templateResource;
 		this.currencyFormatter.setRoundingMode(RoundingMode.HALF_UP);
 	}

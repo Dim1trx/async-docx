@@ -4,8 +4,11 @@ server:
 spring:
   application:
     name: document-api
+  docker:
+    compose:
+      file: ../docker-compose.yml
   datasource:
-    url: jdbc:postgresql://localhost:5432/async_docx
+    url: jdbc:postgresql://localhost:15432/async_docx
     username: async_docx
     password: async_docx
   jpa:
