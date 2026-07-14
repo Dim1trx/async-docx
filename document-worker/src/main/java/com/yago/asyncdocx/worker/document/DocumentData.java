@@ -37,6 +37,17 @@ public class DocumentData {
 	protected DocumentData() {
 	}
 
+	public DocumentData(UUID id, String clientName, String providerName, String serviceDescription,
+			LocalDate effectiveDate, BigDecimal feeAmount, Instant createdAt) {
+		this.id = id;
+		this.clientName = clientName;
+		this.providerName = providerName;
+		this.serviceDescription = serviceDescription;
+		this.effectiveDate = effectiveDate;
+		this.feeAmount = feeAmount;
+		this.createdAt = createdAt;
+	}
+
 	public UUID getId() {
 		return id;
 	}
