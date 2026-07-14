@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: async_docx
       POSTGRES_PASSWORD: async_docx
     ports:
-      - "5432:5432"
+      - "15432:5432"
     volumes:
       - postgres-18-data:/var/lib/postgresql
     healthcheck:
