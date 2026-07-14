@@ -3,7 +3,7 @@ package com.yago.asyncdocx.api.generation;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
-import org.springframework.core.io.PathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -38,6 +38,6 @@ public class DocumentDownloadService {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Generated document file was not found.");
 		}
 
-		return new PathResource(generatedFile);
+		return new FileSystemResource(generatedFile);
 	}
 }
