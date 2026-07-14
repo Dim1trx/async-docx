@@ -25,7 +25,7 @@ class TemplateDocumentGeneratorTest {
 				+ "{{effectiveDate}}\n"
 				+ "{{feeAmount}}";
 		TemplateDocumentGenerator generator = new TemplateDocumentGenerator(
-				tempDir,
+				tempDir.toString(),
 				new ByteArrayResource(template.getBytes()));
 		DocumentData documentData = new DocumentData(
 				UUID.randomUUID(),
