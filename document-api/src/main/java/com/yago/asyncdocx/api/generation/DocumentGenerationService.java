@@ -39,7 +39,7 @@ public class DocumentGenerationService {
 
 	@Transactional(readOnly = true)
 	public DocumentGeneration get(UUID generationId) {
-		return generationRepository.findById(generationId)
+		return generationRepository.findWithDocumentDataById(generationId)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document generation was not found."));
 	}
 }
