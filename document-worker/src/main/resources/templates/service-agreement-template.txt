@@ -1,0 +1,14 @@
+SERVICE AGREEMENT
+
+This Service Agreement is entered into by and between {{providerName}} ("Provider") and {{clientName}} ("Client").
+
+Effective Date: {{effectiveDate}}
+
+Services
+{{serviceDescription}}
+
+Fees
+The Client agrees to pay {{feeAmount}} for the services described in this agreement.
+
+Acceptance
+By signing this agreement, both parties acknowledge the scope, effective date, and payment terms above.

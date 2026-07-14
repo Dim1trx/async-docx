@@ -12,6 +12,8 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+  flyway:
+    enabled: true
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
@@ -20,13 +22,15 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: com.yago.asyncdocx.worker.messaging
+        spring.json.value.default.type: com.yago.asyncdocx.worker.messaging.DocumentGenerationRequestedEvent
+        spring.json.use.type.headers: false
 
 app:
   kafka:
     document-generation-topic: document-generation-requests
   documents:
     storage-path: ../generated-documents
-    template-path: classpath:templates/service-agreement-template.docx
+    template-path: classpath:templates/service-agreement-template.txt
 
 management:
   endpoints:
